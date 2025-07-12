@@ -1,14 +1,18 @@
-// File: api/tmdb-proxy.js (Full-Fledged Wrapper for TMDB)
-
 const axios = require('axios');
 const dotenv = require('dotenv');
-const cors = reqire('cors');
 dotenv.config();
 
-
-app.use(cors());
-
 module.exports = async (req, res) => {
+  // ✅ CORS HEADERS
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Or use specific origin in prod
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  // ✅ Handle preflight (OPTIONS)
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   const apiKey = process.env.TMDB_API_KEY;
   const { path, ...params } = req.query;
 
