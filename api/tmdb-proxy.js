@@ -2,8 +2,11 @@
 
 const axios = require('axios');
 const dotenv = require('dotenv');
+const cors = reqire('cors');
 dotenv.config();
 
+
+app.use(cors());
 
 module.exports = async (req, res) => {
   const apiKey = process.env.TMDB_API_KEY;
