@@ -79,5 +79,4 @@ GET /api/tmdb-proxy?path=/discover/movie\&with\_genres=28
 
 ---
 
-No extra fluff. Just drop this into your `README.md` file. Want to auto-generate more endpoints or group them by category? I can handle that too.
 ```
